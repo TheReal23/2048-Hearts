@@ -60,9 +60,21 @@ HTMLActuator.prototype.addTile = function (tile) {
   if (tile.value > 2048) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
+  var outputtext = new Array();
+  outputtext[2] = "❤";
+  outputtext[4] = "ÿ";
+  outputtext[8] = "❣";
+  outputtext[16] = "ÿ";
+  outputtext[32] = "ÿ";
+  outputtext[64] = "ÿ";
+  outputtext[128] = "ÿ";
+  outputtext[256] = "ÿ";
+  outputtext[512] = "ÿ";
+  outputtext[1024] = "ÿ";
+  outputtext[2048] = "ÿ";
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  inner.textContent = outputtext[tile.value];
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
